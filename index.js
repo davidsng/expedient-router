@@ -37,7 +37,7 @@ Router.prototype.route = function route () {
           document.querySelector(handler.element)
             .style.display = 'block'
         }
-      })
+      }).bind(this)
 
       switch (window.location.pathname) {
         case '/about':
