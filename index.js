@@ -26,10 +26,11 @@ function Router (routes) {
 }
 
 Router.prototype.route = function route () {
+  console.log("testing");
     Array.from(document.querySelectorAll('section'))   // need to do this to convert node list to array
       .forEach(function (section) { section.style.display = 'none' })
 
-      Object.keys(this.routes).forEach(function (key) {
+      Object.keys(this.routes.forEach(function (key) {
         // console.log(this.routes[key])
         if (key === window.location.pathname) {
           var handler = this.routes[key]
@@ -39,29 +40,28 @@ Router.prototype.route = function route () {
         }
       }).bind(this)
 
-      switch (window.location.pathname) {
-        case '/about':
-          document.title = 'About Us'
-          document.querySelector('#about')
-            .style.display = 'block'
-          break
-        case '/shop':
-          document.title = 'SG50 Shop'
-          document.querySelector('#products')
-            .style.display = 'block'
-          break
-        case '/':
-          document.title = 'Homepage'
-          document.querySelector('#landing')
-            .style.display = 'block'
-          break
-        default:
-          document.querySelector('#error404').style.display = 'block'
-      }
-    }
+      // switch (window.location.pathname) {
+      //   case '/about':
+      //     document.title = 'About Us'
+      //     document.querySelector('#about')
+      //       .style.display = 'block'
+      //     break
+      //   case '/shop':
+      //     document.title = 'SG50 Shop'
+      //     document.querySelector('#products')
+      //       .style.display = 'block'
+      //     break
+      //   case '/':
+      //     document.title = 'Homepage'
+      //     document.querySelector('#landing')
+      //       .style.display = 'block'
+      //     break
+      //   default:
+      //     document.querySelector('#error404').style.display = 'block'
+      // }
+    )}
 
 module.exports = Router
-
 
 // switch (window.location.pathname) {
 //   case '/about':
